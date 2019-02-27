@@ -51,3 +51,6 @@ var Event = /** @class */ (function () {
     return Event;
 }());
 exports.default = Event;
+
+var e = Object.create(Event.prototype);
+e.events = [];

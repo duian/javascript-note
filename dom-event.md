@@ -10,7 +10,7 @@ W3c spefication
 -`event-name`(string)
 事件名称或者类型， 比如`click`, `moousedown`, `touchstart`,`transitionend` 等等或者可以是你自定义的事件。
 
--`callback`(function) 
+-`callback`(function)
 当事件发生的时候函数将被调用，`event`对象相关的信息将作为第一个参数传入函数中。
 
 -`use-capture`(boolean)

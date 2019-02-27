@@ -1,4 +1,5 @@
 interface EventInterface {
+    events: {[key: string]: [() => void]}
     on(type: string, fn: Function): void
     one(type: string, fn: Function): void
     off(type: string, fn: Function): void
@@ -12,20 +13,20 @@ export default class Event implements EventInterface {
     this.events  = {}
   }
 
-  on(type: string, fn: Function) {
+  on(type: string, fn: () => void) {
       if (this.events[type]) {
           return this.events[type].push(fn);
       }
       this.events[type] = [];
       this.events[type].push(fn);
   }
-  one(type: string, fn: Function) {
+  one(type: string, fn: () => void) {
       this.on(type, function on(...args) {
           this.off(type, on);
           fn.apply(this, args);
       });
   }
-  off(type: string, fn: Function) {
+  off(type: string, fn: () => void) {
       const events = this.events[type];
       if (events) {
           if (fn) {
@@ -48,3 +49,6 @@ export default class Event implements EventInterface {
       }
   }
 }
+
+const e = new Event();
+e.on('asdf', 123);

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./main.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>title</h1>
+  <h3>subTitle</h3>
+  <img src="https://community.akamai.com/servlet/JiveServlet/showImage/38-2494-9699/timing-overview.png" alt="">
+  <ul>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+    <li>lsjfdla</li>
+  </ul>
+  <script>
+    ;
+    (function () {
+
+      handleAddListener('load', getTiming)
+
+      function handleAddListener(type, fn) {
+        if (window.addEventListener) {
+          window.addEventListener(type, fn)
+        } else {
+          window.attachEvent('on' + type, fn)
+        }
+      }
+
+      function getTiming() {
+        try {
+          var time = performance.timing;
+          var timingObj = {};
+
+          var loadTime = (time.loadEventEnd - time.loadEventStart) / 1000;
+
+          if (loadTime < 0) {
+            setTimeout(function () {
+              getTiming();
+            }, 200);
+            return;
+          }
+
+          timingObj['重定向时间'] = (time.redirectEnd - time.redirectStart);
+          timingObj['DNS解析时间'] = (time.domainLookupEnd - time.domainLookupStart);
+          timingObj['TCP完成握手时间'] = (time.connectEnd - time.connectStart);
+          timingObj['HTTP请求响应完成时间'] = (time.responseEnd - time.requestStart);
+          timingObj['DOM开始加载前所花费时间'] = (time.responseEnd - time.navigationStart);
+          timingObj['DOM加载完成时间'] = (time.domComplete - time.domLoading);
+          timingObj['DOM结构解析完成时间'] = (time.domInteractive - time.domLoading);
+          timingObj['脚本加载时间'] = (time.domContentLoadedEventEnd - time.domContentLoadedEventStart);
+          timingObj['onload事件时间'] = (time.loadEventEnd - time.loadEventStart);
+          timingObj['dommContentLoaded'] = (time.domContentLoadedEventEnd - time.fetchStart);
+          timingObj['页面加载时间'] = (time.loadEventEnd - time.fetchStart);
+
+          for (item in timingObj) {
+            console.log(item + ":" + timingObj[item] + '毫秒(ms)');
+          }
+
+          console.log(performance.timing);
+
+        } catch (e) {
+          console.log(timingObj)
+          console.log(performance.timing);
+        }
+      }
+    })();
+  </script>
+  <script>
+    var axios = (method, url) => {
+      var xhr = new XMLHttpRequest();
+      performance.mark('xxx');
+      xhr.open(method, url);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          var { status } = xhr;
+          if (status >= 200 && status < 300) {
+            performance.mark('xxxx');
+          } else {
+
+          }
+        }
+        performance.measure('xxx');
+      }
+      xhr.send();
+    }
+  </script>
+</body>
+
+</html>
