@@ -5,16 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(lldb) Launch",
-      "type": "cppdbg",
+      "type": "node",
       "request": "launch",
-      "program": "enter program name, for example ${workspaceFolder}/a.out",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": true,
-      "MIMode": "lldb"
+      "name": "Launch Program",
+      "program": "${cwd}/suanfa/javascript/sorting/insertion.js"
     }
   ]
 }
