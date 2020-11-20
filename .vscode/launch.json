@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${cwd}/suanfa/javascript/sorting/insertion.js"
+      "program": "${cwd}/nodejs/file.js"
     }
   ]
 }
