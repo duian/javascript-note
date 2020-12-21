@@ -50,7 +50,7 @@ class LinkedList {
 
   findPrev(item) {
     let currentNode = this.head;
-    whild(currentNode.next !== null && currentNode.next.el !== item) {
+    while(currentNode.next !== null && currentNode.next.el !== item) {
       currentNode = currentNode.next;
     }
 
