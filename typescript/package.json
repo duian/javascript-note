@@ -1,14 +1,16 @@
 {
-  "name": "typescript",
+  "name": "typescript-demo",
   "version": "1.0.0",
   "description": "",
   "main": "events.js",
   "scripts": {
+    "build": "npx tsc ./main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "xkiwi <zhouqiao0418@gmail.com> (http://www.github.com/duian)",
   "license": "ISC",
   "devDependencies": {
-    "@types/underscore": "^1.8.4"
+    "@types/underscore": "^1.8.4",
+    "typescript": "^4.1.3"
   }
 }
