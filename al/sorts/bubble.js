@@ -1,13 +1,6 @@
-const util = require('./util');
+const util = require('../util');
 
-// console.time('bubble');
-// let arr = util.createRandomArray(100000);
-// bubbleSort(arr);
-
-// console.timeEnd('bubble');
-// console.log('origin arr is: ', arr);
-
-function bubbleSort(arr) {
+export const bubbleSort = (arr) => {
   const len = arr.length;
   for (let i = 0; i < len; i++) {
     for (let j = i + 1; j < len; j++) {
@@ -20,5 +13,3 @@ function bubbleSort(arr) {
 }
 
 module.exports = bubbleSort;
-
-// console.log('sorted arr is: ', bubbleSort(arr));
