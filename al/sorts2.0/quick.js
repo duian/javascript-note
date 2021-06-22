@@ -23,3 +23,15 @@ const quick = (arr) => {
   const partitionIndex = partition(arr, pivot);
 
 }
+
+const q = (arr) => {
+  const pivot = arr.length - 1;
+  const partitionIndex = partition(arr, pivot);
+}
+/**
+ * 找到一个节点， 小的在左边，大的在右边
+ */
+const partition = (arr, pivot) => {
+  const item = arr[pivot];
+  let
+}

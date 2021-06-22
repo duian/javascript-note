@@ -12,7 +12,6 @@ class Promise {
       this.callbacks.push(onFulfilled);
     } else {
       onFulfilled(this.value);
-.gov.cline-neutral
     }
     return this;
   }

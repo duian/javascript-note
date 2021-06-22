@@ -157,6 +157,14 @@ const quickSort = (arr, left, right) {
   }
 }
 
+const quickSort = (arr, left, right) => {
+  if (left < right) {
+    let pivot = right;
+    let paritiIndex = partition(arr, pivot, left, right);
+    quickSort(arr, left, partitionIndex - 1 < left ? left : partitionIndex -1);
+    quickSort(arr, partitionIndex + 1 > right ? right : partitionIndex + 1, right);
+  }
+}
 
 /**
  * 计数排序
